@@ -8,23 +8,23 @@ import java.util.concurrent.atomic.AtomicBoolean
 import scala.collection.JavaConverters._
 import scala.concurrent.{ExecutionContext, Future}
 
-import com.kschool.kafka.exercise.models.{JsonDeserializer, Message}
+import com.kschool.kafka.exercise.models.{Configuration, JsonDeserializer, Message}
 import com.kschool.kafka.exercise.utils.Metrics
 import org.apache.kafka.clients.consumer.ConsumerConfig._
 import org.apache.kafka.clients.consumer.{ConsumerRebalanceListener, KafkaConsumer}
 import org.apache.kafka.common.TopicPartition
 
 class Consumer(id: Int,
-               kafkaServer: String,
-               topic: String,
+               configuration: Configuration,
                inQueue: LinkedBlockingQueue[Message],
                isRunning: AtomicBoolean)(implicit ex: ExecutionContext) {
   println(s"Consumer[$id] - Create consumer")
+  val topic = configuration.topics.in
   val props = new Properties()
-  props.put(BOOTSTRAP_SERVERS_CONFIG, kafkaServer)
+  props.put(BOOTSTRAP_SERVERS_CONFIG, configuration.kafkaBootstrapServers)
   props.put(ENABLE_AUTO_COMMIT_CONFIG, "true")
   props.put(AUTO_COMMIT_INTERVAL_MS_CONFIG, "100")
-  props.put(GROUP_ID_CONFIG, "kafka-group-simple")
+  props.put(GROUP_ID_CONFIG, configuration.applicationId)
   props.put(AUTO_OFFSET_RESET_CONFIG, "earliest")
   props.put(KEY_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer")
   props.put(VALUE_DESERIALIZER_CLASS_CONFIG, classOf[JsonDeserializer].getName)

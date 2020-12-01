@@ -16,7 +16,7 @@ class KafkaService(configuration: Configuration)(implicit ex: ExecutionContext) 
 
   def start(): Future[_] = {
     val consumers = (0 until configuration.parallelism.consumer).map { id =>
-      new Consumer(id, configuration.kafkaBootstrapServers, configuration.topics.in, inQueue, isRunning).start()
+      new Consumer(id, configuration, inQueue, isRunning).start()
     }
 
     val processors = (0 until configuration.parallelism.processor).map { id =>
