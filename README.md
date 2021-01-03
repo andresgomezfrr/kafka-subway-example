@@ -51,7 +51,7 @@ En las figuras inferiores tenemos un ejemplo tipo de cada mensajes: control, mé
   "timestamp": 1448125286,
   "user_id": "ADB123456",
   "full_name": "Andres Gomez”,
-  "action": 1,
+  "action": 1
 }}
 ```
 
