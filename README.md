@@ -56,12 +56,13 @@ En las figuras inferiores tenemos un ejemplo tipo de cada mensajes: control, mé
 ```
 
 En la figura inferior, podemos ver un esquema lógico de cómo va a funcionar nuestro servicio. A la izquierda tenemos un broker de Kafka donde hemos creado todos los necesarios topics: **inTopic**, **controlTopic**, **alertTopic** y **metricTopic**. Y a la derecha, encontramos nuestro programa que consta de 3 procesos principales:
-![architecture.png](images/architecture.png)
+
+![architecture.png](images/kafka_base.png)
 
 * **Consumer**: El consumidor es el encargado de leer los mensajes que se escriban en el topic de kafka (inTopic). Los mensajes, que tienen formato JSON, son parseados e introducidos en una cola en memoria denominada inQueue;
 * **Processor**: El procesador va leyendo los mensajes de la cola de entrada (inQueue) y gracias a ellos realiza cierta lógica, generando 3 tipos de mensajes: control, alerta y métrica. Todos los mensajes son almacenados en la cola de salida (outQueue). El procesador tiene una cache interna que es utilizada en la lógica del sistema para poder verificar si un usuario estaba antes o no en el metro y para calcular la duración que un usuario permanece dentro del metro.
 * **Producer**: Finalmente, el productor obtiene los mensajes procesados de la cola de salida, los transforma de nuevo a formato JSON y los envía a su topic correspondiente (control, alerta o métrica).
 
-![flow.png](images/flow.png)
+![flow.png](images/flujo.png)
 
 
