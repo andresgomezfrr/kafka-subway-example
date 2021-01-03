@@ -32,7 +32,7 @@ En las figuras inferiores tenemos un ejemplo tipo de cada mensajes: control, mé
 {"ControlMessage" :{
     "timestamp": 1448125286,
     "user_id": "ADB123456",
-    "full_name": "Andres Gomez”,
+    "full_name": "Andres Gomez",
     "action": 0
 }}
 ```
@@ -41,7 +41,7 @@ En las figuras inferiores tenemos un ejemplo tipo de cada mensajes: control, mé
 {"MetricMessage" :{
   "timestamp": 1448125286,
   "user_id": "ADB123456",
-  "full_name": "Andres Gomez”,
+  "full_name": "Andres Gomez",
   "duration": 600
 }}
 ```
@@ -50,7 +50,7 @@ En las figuras inferiores tenemos un ejemplo tipo de cada mensajes: control, mé
 {"AlertMessage" :{
   "timestamp": 1448125286,
   "user_id": "ADB123456",
-  "full_name": "Andres Gomez”,
+  "full_name": "Andres Gomez",
   "action": 1
 }}
 ```
