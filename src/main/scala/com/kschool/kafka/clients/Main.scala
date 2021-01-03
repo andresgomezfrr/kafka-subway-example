@@ -1,12 +1,12 @@
-package com.kschool.kafka.exercise
+package com.kschool.kafka.clients
 
 import java.util.concurrent.Executors
 import scala.concurrent.duration.Duration
 import scala.concurrent.{Await, ExecutionContext}
 import scala.io.Source
 
-import com.kschool.kafka.exercise.models.Configuration
-import com.kschool.kafka.exercise.utils.Metrics
+import com.kschool.kafka.clients.models.Configuration
+import com.kschool.kafka.clients.utils.Metrics
 import io.circe.generic.auto._
 import io.circe.parser._
 import sun.misc.{Signal, SignalHandler}

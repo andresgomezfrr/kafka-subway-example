@@ -1,4 +1,4 @@
-package com.kschool.kafka.exercise.models
+package com.kschool.kafka.clients.models
 
 import io.circe.generic.auto._
 import io.circe.syntax._

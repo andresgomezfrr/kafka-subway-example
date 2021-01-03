@@ -1,13 +1,13 @@
-package com.kschool.kafka.exercise
+package com.kschool.kafka.clients
 
 import java.util.concurrent.LinkedBlockingQueue
 import java.util.concurrent.atomic.AtomicBoolean
 import scala.concurrent.{ExecutionContext, Future}
 
-import com.kschool.kafka.exercise.consumer.Consumer
-import com.kschool.kafka.exercise.models.{Configuration, Message}
-import com.kschool.kafka.exercise.processor.Processor
-import com.kschool.kafka.exercise.producer.Producer
+import com.kschool.kafka.clients.consumer.Consumer
+import com.kschool.kafka.clients.models.{Configuration, Message}
+import com.kschool.kafka.clients.processor.Processor
+import com.kschool.kafka.clients.producer.Producer
 
 class KafkaService(configuration: Configuration)(implicit ex: ExecutionContext) {
   val isRunning: AtomicBoolean = new AtomicBoolean(true)

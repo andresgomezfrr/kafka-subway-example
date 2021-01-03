@@ -1,4 +1,4 @@
-package com.kschool.kafka.exercise.utils
+package com.kschool.kafka.clients.utils
 
 import java.util.concurrent.ConcurrentHashMap
 import scala.collection.concurrent

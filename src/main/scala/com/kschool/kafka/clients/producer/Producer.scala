@@ -1,12 +1,12 @@
-package com.kschool.kafka.exercise.producer
+package com.kschool.kafka.clients.producer
 
 import java.util.Properties
 import java.util.concurrent.atomic.AtomicBoolean
 import java.util.concurrent.{LinkedBlockingQueue, TimeUnit}
 import scala.concurrent.{ExecutionContext, Future}
 
-import com.kschool.kafka.exercise.models.{JsonSerializer, Message}
-import com.kschool.kafka.exercise.utils.Metrics
+import com.kschool.kafka.clients.models.{JsonSerializer, Message}
+import com.kschool.kafka.clients.utils.Metrics
 import org.apache.kafka.clients.producer.ProducerConfig._
 import org.apache.kafka.clients.producer.{KafkaProducer, ProducerRecord}
 

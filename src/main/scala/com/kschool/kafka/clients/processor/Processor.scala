@@ -1,11 +1,11 @@
-package com.kschool.kafka.exercise.processor
+package com.kschool.kafka.clients.processor
 
 import java.util.concurrent.{LinkedBlockingQueue, TimeUnit}
 import java.util.concurrent.atomic.AtomicBoolean
 import scala.concurrent.{ExecutionContext, Future}
 
-import com.kschool.kafka.exercise.models.{AlertMessage, Configuration, ControlMessage, InMessage, Message, MetricMessage}
-import com.kschool.kafka.exercise.utils.{MapCache, Metrics}
+import com.kschool.kafka.clients.models.{AlertMessage, Configuration, ControlMessage, InMessage, Message, MetricMessage}
+import com.kschool.kafka.clients.utils.{MapCache, Metrics}
 
 class Processor(id: Int,
                 configuration: Configuration,

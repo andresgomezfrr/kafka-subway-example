@@ -1,5 +1,6 @@
 {
-  "kafkaBootstrapServers": "192.168.1.36:9092",
+  "kafkaBootstrapServers": "localhost:9092",
+  "applicationId": "a",
   "topics": {
     "in": "in",
     "control": "control",

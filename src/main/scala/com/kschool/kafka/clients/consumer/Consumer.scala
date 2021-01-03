@@ -1,4 +1,4 @@
-package com.kschool.kafka.exercise.consumer
+package com.kschool.kafka.clients.consumer
 
 import java.time.Duration
 import java.util
@@ -8,8 +8,8 @@ import java.util.concurrent.atomic.AtomicBoolean
 import scala.collection.JavaConverters._
 import scala.concurrent.{ExecutionContext, Future}
 
-import com.kschool.kafka.exercise.models.{Configuration, JsonDeserializer, Message}
-import com.kschool.kafka.exercise.utils.Metrics
+import com.kschool.kafka.clients.models.{Configuration, JsonDeserializer, Message}
+import com.kschool.kafka.clients.utils.Metrics
 import org.apache.kafka.clients.consumer.ConsumerConfig._
 import org.apache.kafka.clients.consumer.{ConsumerRebalanceListener, KafkaConsumer}
 import org.apache.kafka.common.TopicPartition
@@ -30,6 +30,7 @@ class Consumer(id: Int,
   props.put(VALUE_DESERIALIZER_CLASS_CONFIG, classOf[JsonDeserializer].getName)
 
   val kafkaConsumer = new KafkaConsumer[String, Option[Message]](props)
+
   kafkaConsumer.subscribe(Seq(topic).asJava, new ConsumerRebalanceListener {
     override def onPartitionsRevoked(partitions: util.Collection[TopicPartition]): Unit = {}
 
