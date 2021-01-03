@@ -2,7 +2,7 @@ name := "kafka-exercise"
 
 version := "0.1"
 
-scalaVersion := "2.12.10"
+scalaVersion := "2.12.12"
 
 val circeVersion = "0.12.3"
 
