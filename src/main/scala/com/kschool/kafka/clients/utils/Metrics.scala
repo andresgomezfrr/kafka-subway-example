@@ -1,8 +1,8 @@
 package com.kschool.kafka.clients.utils
 
 import java.util.concurrent.ConcurrentHashMap
-import scala.collection.concurrent
 import scala.collection.JavaConverters._
+import scala.collection.concurrent
 
 object Metrics {
   private val statsMap: concurrent.Map[String, Long] = new ConcurrentHashMap[String, Long]().asScala

@@ -1,9 +1,8 @@
 package com.kschool.kafka.streams
 
 import java.util.Properties
-import scala.concurrent.duration.{Duration, DurationInt}
-import scala.concurrent.{Await, Future, Promise}
-import scala.util.Try
+import scala.concurrent.duration.DurationInt
+import scala.concurrent.{Future, Promise}
 
 import com.kschool.kafka.common.models._
 import org.apache.kafka.clients.consumer.ConsumerConfig

@@ -5,9 +5,9 @@ import java.util.concurrent.atomic.AtomicBoolean
 import scala.concurrent.{ExecutionContext, Future}
 
 import com.kschool.kafka.clients.consumer.Consumer
-import com.kschool.kafka.common.models.{Configuration, Message}
 import com.kschool.kafka.clients.processor.Processor
 import com.kschool.kafka.clients.producer.Producer
+import com.kschool.kafka.common.models.{Configuration, Message}
 
 class KafkaService(configuration: Configuration)(implicit ex: ExecutionContext) {
   val isRunning: AtomicBoolean = new AtomicBoolean(true)
