@@ -1,4 +1,4 @@
-package com.kschool.kafka.clients.models
+package com.kschool.kafka.common.models
 
 import java.util.UUID
 

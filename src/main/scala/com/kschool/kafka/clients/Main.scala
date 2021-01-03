@@ -5,7 +5,7 @@ import scala.concurrent.duration.Duration
 import scala.concurrent.{Await, ExecutionContext}
 import scala.io.Source
 
-import com.kschool.kafka.clients.models.Configuration
+import com.kschool.kafka.common.models.Configuration
 import com.kschool.kafka.clients.utils.Metrics
 import io.circe.generic.auto._
 import io.circe.parser._

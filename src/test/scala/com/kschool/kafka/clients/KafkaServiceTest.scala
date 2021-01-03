@@ -4,7 +4,7 @@ import java.util.UUID
 import java.util.concurrent.Executors
 import scala.concurrent.ExecutionContext
 
-import com.kschool.kafka.clients.models._
+import com.kschool.kafka.common.models._
 import net.manub.embeddedkafka.{EmbeddedKafka, EmbeddedKafkaConfig}
 import org.apache.kafka.common.serialization.StringSerializer
 import org.scalatest._

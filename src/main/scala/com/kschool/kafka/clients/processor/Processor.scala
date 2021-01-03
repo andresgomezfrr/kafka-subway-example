@@ -4,7 +4,7 @@ import java.util.concurrent.{LinkedBlockingQueue, TimeUnit}
 import java.util.concurrent.atomic.AtomicBoolean
 import scala.concurrent.{ExecutionContext, Future}
 
-import com.kschool.kafka.clients.models.{AlertMessage, Configuration, ControlMessage, InMessage, Message, MetricMessage}
+import com.kschool.kafka.common.models.{AlertMessage, Configuration, ControlMessage, InMessage, Message, MetricMessage}
 import com.kschool.kafka.clients.utils.{MapCache, Metrics}
 
 class Processor(id: Int,

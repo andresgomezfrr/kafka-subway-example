@@ -8,7 +8,7 @@ import java.util.concurrent.atomic.AtomicBoolean
 import scala.collection.JavaConverters._
 import scala.concurrent.{ExecutionContext, Future}
 
-import com.kschool.kafka.clients.models.{Configuration, JsonDeserializer, Message}
+import com.kschool.kafka.common.models.{Configuration, JsonDeserializer, Message}
 import com.kschool.kafka.clients.utils.Metrics
 import org.apache.kafka.clients.consumer.ConsumerConfig._
 import org.apache.kafka.clients.consumer.{ConsumerRebalanceListener, KafkaConsumer}

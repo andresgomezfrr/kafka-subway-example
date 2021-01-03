@@ -1,4 +1,4 @@
-package com.kschool.kafka.clients.models
+package com.kschool.kafka.common.models
 
 sealed trait Message {
   val timestamp: Long
@@ -7,10 +7,6 @@ sealed trait Message {
 }
 
 case class UserMessage(timestamp: Long, user_id: String, full_name: String) extends Message
-
-object UserMessage {
-
-}
 
 case class InMessage(timestamp: Long, user_id: String, full_name: String, action: Int) extends Message
 

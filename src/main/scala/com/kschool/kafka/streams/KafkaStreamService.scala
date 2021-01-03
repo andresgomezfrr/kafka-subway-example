@@ -3,7 +3,7 @@ package com.kschool.kafka.streams
 import java.time.Duration
 import java.util.Properties
 
-import com.kschool.kafka.clients.models._
+import com.kschool.kafka.common.models._
 import org.apache.kafka.streams.scala.StreamsBuilder
 import org.apache.kafka.streams.scala.kstream.{Consumed, Joined, Produced}
 import org.apache.kafka.streams.scala.serialization.Serdes

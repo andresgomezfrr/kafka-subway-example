@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.AtomicBoolean
 import java.util.concurrent.{LinkedBlockingQueue, TimeUnit}
 import scala.concurrent.{ExecutionContext, Future}
 
-import com.kschool.kafka.clients.models.{JsonSerializer, Message}
+import com.kschool.kafka.common.models.{JsonSerializer, Message}
 import com.kschool.kafka.clients.utils.Metrics
 import org.apache.kafka.clients.producer.ProducerConfig._
 import org.apache.kafka.clients.producer.{KafkaProducer, ProducerRecord}
