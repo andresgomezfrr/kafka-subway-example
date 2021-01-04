@@ -14,24 +14,7 @@ import org.apache.kafka.streams.{KafkaStreams, StreamsConfig}
 
 class KafkaStreamService(configuration: Configuration) {
 
-  val jsonSerializer = new JsonSerializer
-  val jsonOptSerializer = new JsonOptSerializer
-  val jsonDeserializer = new JsonDeserializer
-
-  implicit val jsonSerde = Serdes.fromFn[Message](
-    (topic: String, message: Message) => jsonSerializer.serialize(topic, message),
-    (topic: String, bytes: Array[Byte]) => jsonDeserializer.deserialize(topic, bytes)
-  )
-
-  implicit val jsonOptSerde = Serdes.fromFn[Option[Message]](
-    (topic: String, message: Option[Message]) => jsonOptSerializer.serialize(topic, message),
-    (topic: String, bytes: Array[Byte]) => Option(jsonDeserializer.deserialize(topic, bytes))
-  )
-
-  implicit val messageConsumed = Consumed.`with`[String, Message](stringSerde, jsonSerde)
-  implicit val messageProduced = Produced.`with`[String, Message](stringSerde, jsonSerde)
-  implicit val messageOptProduced = Produced.`with`[String, Option[Message]](stringSerde, jsonOptSerde)
-  implicit val messageJoined = Joined.`with`[String, Message, Message]
+  import JsonImplicits._
 
   val streams = new StreamsBuilder()
 
@@ -88,7 +71,6 @@ class KafkaStreamService(configuration: Configuration) {
   metric
     .mapValues(_._2)
     .to(configuration.topics.metric)
-
 
   val properties = new Properties()
   properties.put(StreamsConfig.APPLICATION_ID_CONFIG, configuration.applicationId)
